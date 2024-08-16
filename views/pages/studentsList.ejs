@@ -1,0 +1,149 @@
+<%- include('../layouts/header') %>
+            <div class="row justify-content-between align-items-center mb-10">
+
+                <!-- Page Heading Start -->
+                <div class="col-12 col-lg-auto mb-20">
+                    <div class="page-heading">
+                        <h3>Students <span>/ Students List</span></h3>
+                    </div>
+                </div><!-- Page Heading End -->
+
+                <div class="col-12 col-lg-auto mb-20">
+                    <div class="buttons-group">
+                        <button class="button button-outline button-primary" onclick="add()">Add New</button>
+                        <!-- <button class="button button-outline button-info">Save to Draft</button>
+                        <button class="button button-outline button-danger">Delete Product</button> -->
+                    </div>
+                </div><!-- Page Button Group End -->
+
+            </div><!-- Page Headings End -->
+
+            <div class="row">
+
+                <!--Order List Start-->
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-vertical-middle">
+                            <thead>
+                                <tr>
+                                    <th>Sl.No</th>
+                                    <th>Name</th>
+                                    <!-- <th>Photo</th> -->
+                                    <th>Gender</th>
+                                    <!-- <th>Course</th> -->
+                                    <th>Phone</th>
+                                    <!-- <th>Date</th>
+                                    <th>Status</th> -->
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% list.forEach(function(item) { %>
+                                <tr id="row">
+                                    <td>1</td>
+                                    <td><%= item.FirstName %> <%= item.LastName %></td>
+                                    <!-- <td><img src="/static/images/product/list-product-1.jpg" alt="" class="product-image rounded-circle"></td> -->
+                                    <td><a href="#"><%= item.gender %></a></td>
+                                    <!-- <td><%= item.course %></td> -->
+                                    <td><%= item.Phone %></td>
+                                    <!-- <td>13 Feb 2018</td>
+                                    <td><span class="badge badge-danger">Due</span></td> -->
+                                    <td class="action h4">
+                                        <div class="table-action-buttons">
+                                            <a class="view button button-box button-xs button-primary" href="/dataStudent/<%=item._id %>"><i class="zmdi zmdi-more"></i></a>
+                                            <a class="edit button button-box button-xs button-info" href="/editStudent/<%=item._id %>"><i class="zmdi zmdi-edit"></i></a>
+                                            <a class="delete button button-box button-xs button-danger" href="/deleteStudent/<%=item._id %>" onclick="deleter()"><i class="zmdi zmdi-delete"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                                <!-- <tr>
+                                    <td>#MSP40023</td>
+                                    <td>Blanka Mokroš</td>
+                                    <td><img src="assets/images/product/list-product-2.jpg" alt="" class="product-image rounded-circle"></td>
+                                    <td><a href="#">Spro 4 Laptop</a></td>
+                                    <td>$600.00</td>
+                                    <td>03 pyc</td>
+                                    <td>13 Feb 2018</td>
+                                    <td><span class="badge badge-success">Paid</span></td>
+                                    <td class="action h4">
+                                        <div class="table-action-buttons">
+                                            <a class="view button button-box button-xs button-primary" href="order-details.html"><i class="zmdi zmdi-more"></i></a>
+                                            <a class="edit button button-box button-xs button-info" href="#"><i class="zmdi zmdi-edit"></i></a>
+                                            <a class="delete button button-box button-xs button-danger" href="#"><i class="zmdi zmdi-delete"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#MSP40024</td>
+                                    <td>Rostás Linda</td>
+                                    <td><img src="assets/images/product/list-product-3.jpg" alt="" class="product-image rounded-circle"></td>
+                                    <td><a href="#">Spro 4 Laptop</a></td>
+                                    <td>$600.00</td>
+                                    <td>03 pyc</td>
+                                    <td>13 Feb 2018</td>
+                                    <td><span class="badge badge-danger">Due</span></td>
+                                    <td class="action h4">
+                                        <div class="table-action-buttons">
+                                            <a class="view button button-box button-xs button-primary" href="order-details.html"><i class="zmdi zmdi-more"></i></a>
+                                            <a class="edit button button-box button-xs button-info" href="#"><i class="zmdi zmdi-edit"></i></a>
+                                            <a class="delete button button-box button-xs button-danger" href="#"><i class="zmdi zmdi-delete"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#MSP40025</td>
+                                    <td>Jana Valenta</td>
+                                    <td><img src="assets/images/product/list-product-4.jpg" alt="" class="product-image rounded-circle"></td>
+                                    <td><a href="#">Spro 4 Laptop</a></td>
+                                    <td>$600.00</td>
+                                    <td>03 pyc</td>
+                                    <td>13 Feb 2018</td>
+                                    <td><span class="badge badge-success">Paid</span></td>
+                                    <td class="action h4">
+                                        <div class="table-action-buttons">
+                                            <a class="view button button-box button-xs button-primary" href="order-details.html"><i class="zmdi zmdi-more"></i></a>
+                                            <a class="edit button button-box button-xs button-info" href="#"><i class="zmdi zmdi-edit"></i></a>
+                                            <a class="delete button button-box button-xs button-danger" href="#"><i class="zmdi zmdi-delete"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#MSP40026</td>
+                                    <td>Tiêu Bích</td>
+                                    <td><img src="assets/images/product/list-product-5.jpg" alt="" class="product-image rounded-circle"></td>
+                                    <td><a href="#">Spro 4 Laptop</a></td>
+                                    <td>$600.00</td>
+                                    <td>03 pyc</td>
+                                    <td>13 Feb 2018</td>
+                                    <td><span class="badge badge-success">Paid</span></td>
+                                    <td class="action h4">
+                                        <div class="table-action-buttons">
+                                            <a class="view button button-box button-xs button-primary" href="order-details.html"><i class="zmdi zmdi-more"></i></a>
+                                            <a class="edit button button-box button-xs button-info" href="#"><i class="zmdi zmdi-edit"></i></a>
+                                            <a class="delete button button-box button-xs button-danger" href="#"><i class="zmdi zmdi-delete"></i></a>
+                                        </div>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--Order List End-->
+                
+            </div>
+
+
+        </div><!-- Content Body End -->
+        <script>
+            function add() {
+                window.location.href = '/addStudent'; // Replace with your desired route
+}
+function deleter() {
+    const row = document.getElementById('row');
+    if (row) {
+        row.remove();
+    }
+}
+        </script>
+        <%- include('../layouts/footer') %>

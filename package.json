@@ -1,0 +1,33 @@
+{
+  "name": "school-management-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon --watch src/**/*.ts --exec npx ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.1.0",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "firebase": "^10.12.5",
+    "flash": "^1.1.0",
+    "mongoose": "^8.5.2",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/express-session": "^1.18.0",
+    "@types/mongoose": "^5.11.97",
+    "@types/multer": "^1.4.11",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
